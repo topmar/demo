@@ -42,7 +42,6 @@ class User implements UserDetails {
         accountNonExpired = true;
         accountNonLocked = true;
         credentialsNonExpired = true;
-        roles = "USER";
         Timestamp time = Timestamp.valueOf(LocalDateTime.now());
         createdAt = time;
         updatedAt = time;

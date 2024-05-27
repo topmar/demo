@@ -2,6 +2,8 @@ package se.redvet.app.domain.user;
 
 import se.redvet.app.domain.user.dto.UserDto;
 import se.redvet.app.domain.user.dto.UserLoginDto;
+import se.redvet.app.infrastructure.security.dto.RequestNewUser;
+import se.redvet.app.infrastructure.user.dto.RequestUser;
 
 class UserMapper {
     private UserMapper() {throw new IllegalStateException("UserMapper class");}

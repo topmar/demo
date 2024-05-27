@@ -6,7 +6,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import se.redvet.app.domain.user.dto.UserDto;
 import se.redvet.app.domain.user.dto.UserLoginDto;
+import se.redvet.app.infrastructure.security.dto.RequestNewUser;
 import se.redvet.app.infrastructure.text_literal.TextLiteral;
+import se.redvet.app.infrastructure.user.dto.RequestUser;
 
 import java.util.Optional;
 
@@ -33,7 +35,7 @@ public class UserFacade {
                 .orElseThrow(() -> new UserNotCreatedException(TextLiteral.USER_NOT_CREATED));
     }
 
-    public UserDto getUser(String userName) {
+    public UserDto getUser(final String userName) {
         return userRepo.findByUsername(userName)
                 .map(UserMapper::mapFromUserToUserDto)
                 .orElseThrow(() -> new UserNotFoundException(TextLiteral.USER_NOT_FOUND));
