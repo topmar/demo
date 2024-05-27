@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-email-tokens-table
+      author: marcint
+      changes:
+        - createTable:
+            tableName: email_valid_token
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    unique: true
+              - column:
+                  name: token
+                  type: varchar(37)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: username
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+                    unique: true
